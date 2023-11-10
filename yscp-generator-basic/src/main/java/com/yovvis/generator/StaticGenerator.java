@@ -1,7 +1,9 @@
 package com.yovvis.generator;
 
 import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.io.file.PathUtil;
 import cn.hutool.core.util.ArrayUtil;
+import com.yovvis.utils.PathUtils;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
@@ -16,7 +18,7 @@ import java.nio.file.StandardCopyOption;
 public class StaticGenerator {
     public static void main(String[] args) {
         // 项目根路径 D:\idea\yscp-generator
-        String projectPath = System.getProperty("user.dir");
+        String projectPath = PathUtils.getRunTimePath();
         File projectFile = new File(projectPath);
         // 输入路径 ACM模板路径 yscp-generator-demo\acm-template
         String inputPath = new File(projectFile, "yscp-generator-demo" + File.separator + "acm-template").getAbsolutePath();
