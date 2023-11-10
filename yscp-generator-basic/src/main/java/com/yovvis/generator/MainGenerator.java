@@ -2,14 +2,10 @@ package com.yovvis.generator;
 
 import com.yovvis.model.MainTemplateConfig;
 import com.yovvis.utils.PathUtils;
-import freemarker.template.Configuration;
-import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 
 /**
  * 核心生成器

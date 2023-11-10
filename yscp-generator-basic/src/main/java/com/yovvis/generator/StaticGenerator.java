@@ -1,10 +1,8 @@
 package com.yovvis.generator;
 
 import cn.hutool.core.io.FileUtil;
-import cn.hutool.core.io.file.PathUtil;
 import cn.hutool.core.util.ArrayUtil;
 import com.yovvis.utils.PathUtils;
-import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
 import java.io.IOException;
