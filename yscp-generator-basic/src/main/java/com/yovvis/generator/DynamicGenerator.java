@@ -1,8 +1,7 @@
 package com.yovvis.generator;
 
-import cn.hutool.core.io.file.PathUtil;
+import com.bululu.utils.PathUtils;
 import com.yovvis.model.MainTemplateConfig;
-import com.yovvis.utils.PathUtils;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
