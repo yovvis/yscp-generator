@@ -2,7 +2,7 @@ package com.yovvis.generator;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.ArrayUtil;
-import com.bululu.utils.PathUtils;
+import com.yovvis.utils.PathUtils;
 
 import java.io.File;
 import java.io.IOException;

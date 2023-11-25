@@ -1,7 +1,7 @@
 package com.yovvis.generator;
 
-import com.bululu.utils.PathUtils;
 import com.yovvis.model.MainTemplateConfig;
+import com.yovvis.utils.PathUtils;
 import freemarker.template.TemplateException;
 
 import java.io.File;
@@ -27,8 +27,11 @@ public class MainGenerator {
         // 生成静态文件
         StaticGenerator.copyFilesByRecursive(inputPath, outputPath);
         // 生成动态文件
-        String inputDynamicPath = projectPath + File.separator + "yscp-generator-basic/src/main/resources/templates/MainTemplate.java.ftl";
+        String inputDynamicPath =
+            projectPath + File.separator + "yscp-generator-basic/src/main/resources/templates/MainTemplate.java.ftl";
         String outputDynamicPath = projectPath + File.separator + "acm-template/src/com/yovvis/acm/MainTemplate.java";
+        System.out.println("inputDynamicPath" + inputDynamicPath);
+        System.out.println("outputDynamicPath" + outputDynamicPath);
         DynamicGenerator.doGenerator(inputDynamicPath, outputDynamicPath, model);
     }
 
