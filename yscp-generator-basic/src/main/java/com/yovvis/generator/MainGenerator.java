@@ -30,8 +30,6 @@ public class MainGenerator {
         String inputDynamicPath =
             projectPath + File.separator + "yscp-generator-basic/src/main/resources/templates/MainTemplate.java.ftl";
         String outputDynamicPath = projectPath + File.separator + "acm-template/src/com/yovvis/acm/MainTemplate.java";
-        System.out.println("inputDynamicPath" + inputDynamicPath);
-        System.out.println("outputDynamicPath" + outputDynamicPath);
         DynamicGenerator.doGenerator(inputDynamicPath, outputDynamicPath, model);
     }
 

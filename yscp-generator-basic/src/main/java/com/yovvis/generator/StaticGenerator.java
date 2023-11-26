@@ -19,12 +19,13 @@ public class StaticGenerator {
         String projectPath = PathUtils.getRunTimePath();
         File projectFile = new File(projectPath);
         // 输入路径 ACM模板路径 yscp-generator-demo\acm-template
-        String inputPath = new File(projectFile, "yscp-generator-demo" + File.separator + "acm-template").getAbsolutePath();
+        String inputPath =
+            new File(projectFile, "yscp-generator-demo" + File.separator + "acm-template").getAbsolutePath();
         // 输出路径
         String outputPath = projectPath;
         // 执行拷贝路径
         copyFilesByRecursive(inputPath, outputPath);
-//        copyFilesByHutool(inputPath, outputPath);
+        // copyFilesByHutool(inputPath, outputPath);
 
         System.out.println(projectPath);
     }
@@ -32,7 +33,7 @@ public class StaticGenerator {
     /**
      * 拷贝文件(Hutool 实现，会将输入路径下所有文件拷贝到输出路径中)
      *
-     * @param inputPath  输入路径
+     * @param inputPath 输入路径
      * @param outputPath 输出路径
      */
     public static void copyFilesByHutool(String inputPath, String outputPath) {
@@ -42,7 +43,7 @@ public class StaticGenerator {
     /**
      * 递归拷贝文件（目录完整拷贝）
      *
-     * @param inputPath  输入路径
+     * @param inputPath 输入路径
      * @param outputPath 输出路径
      */
     public static void copyFilesByRecursive(String inputPath, String outputPath) {
@@ -56,9 +57,7 @@ public class StaticGenerator {
     }
 
     /**
-     * 文件A=>目录B,则文件A放在目录B下
-     * 文件A=>文件B,则文件A覆盖文件
-     * 目录A=>目录B,则目录A放在目录B下
+     * 文件A=>目录B,则文件A放在目录B下 文件A=>文件B,则文件A覆盖文件 目录A=>目录B,则目录A放在目录B下
      *
      * 核心思路：先创建目录，然后遍历目录内的文件，依次复制
      *

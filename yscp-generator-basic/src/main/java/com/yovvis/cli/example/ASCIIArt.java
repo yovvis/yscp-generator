@@ -1,6 +1,5 @@
 package com.yovvis.cli.example;
 
-
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Parameters;
@@ -17,8 +16,8 @@ public class ASCIIArt implements Runnable {
     @Option(names = {"-f", "--front-size"}, description = "Front Size")
     int frontSize = 21;
 
-    @Parameters(paramLabel = "<word>", defaultValue = "Hello, pico cli", description = "Words to be translated into " +
-            "ASCII art.")
+    @Parameters(paramLabel = "<word>", defaultValue = "Hello, pico cli",
+        description = "Words to be translated into " + "ASCII art.")
     private String[] words = {"Hello,", " pico cli"};
 
     @Override
@@ -32,6 +31,5 @@ public class ASCIIArt implements Runnable {
         int exitCode = new CommandLine(new ASCIIArt()).execute(args);
         System.exit(exitCode);
     }
-
 
 }

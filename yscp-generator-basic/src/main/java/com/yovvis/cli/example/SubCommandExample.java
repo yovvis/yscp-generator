@@ -42,8 +42,9 @@ public class SubCommandExample implements Runnable {
     }
 
     public static void main(String[] args) {
-        String[] myArgs = new String[]{"add"};
-        int exitCode = new CommandLine(new SubCommandExample()).addSubcommand(new AddCommand()).addSubcommand(new DeleteCommand()).addSubcommand(new QueryCommand()).execute(myArgs);
+        String[] myArgs = new String[] {"add"};
+        int exitCode = new CommandLine(new SubCommandExample()).addSubcommand(new AddCommand())
+            .addSubcommand(new DeleteCommand()).addSubcommand(new QueryCommand()).execute(myArgs);
         System.exit(exitCode);
     }
 

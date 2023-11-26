@@ -10,12 +10,13 @@ import java.util.concurrent.Callable;
  */
 public class Login implements Callable<Integer> {
 
-
     @Option(names = {"-u", "--username"}, description = "User Name")
     String username;
-    @Option(names = {"-p", "--password"}, description = "Password", echo = false, arity = "0..1", prompt = "请输入密码：", interactive = true)
+    @Option(names = {"-p", "--password"}, description = "Password", echo = false, arity = "0..1", prompt = "请输入密码：",
+        interactive = true)
     String password;
-    @Option(names = {"-cp", "--checkpassword"}, description = "Check Password", arity = "0..1", echo = true, prompt = "请确认密码：", interactive = true)
+    @Option(names = {"-cp", "--checkpassword"}, description = "Check Password", arity = "0..1", echo = true,
+        prompt = "请确认密码：", interactive = true)
     String checkPassword;
 
     @Override
