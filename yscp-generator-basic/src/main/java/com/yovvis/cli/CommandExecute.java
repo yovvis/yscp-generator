@@ -3,6 +3,7 @@ package com.yovvis.cli;
 import com.yovvis.cli.command.ConfigCommand;
 import com.yovvis.cli.command.GenerateCommand;
 import com.yovvis.cli.command.ListCommand;
+import com.yovvis.utils.CommandUtils;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
@@ -33,6 +34,7 @@ public class CommandExecute implements Runnable {
      * @return
      */
     public Integer doExecute(String[] args) {
+        args = CommandUtils.preCommand(args);
         return commandLine.execute(args);
     }
 }
