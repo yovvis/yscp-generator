@@ -1,6 +1,6 @@
 package com.yovvis.cli.command;
 
-import com.yovvis.utils.FileUtils;
+import cn.hutool.core.io.FileUtil;
 import com.yovvis.utils.PathUtils;
 import picocli.CommandLine.Command;
 
@@ -18,9 +18,11 @@ public class ListCommand implements Runnable {
     @Override
     public void run() {
         String projectPath = PathUtils.getRunTimePath();
-        // 项目的根路径
-        String inputPath = new File(projectPath, "yscp-generator-demo/acm-template").getAbsolutePath();
-        List<File> files = FileUtils.loopFiles(inputPath);
+        // 整个项目的根路径
+        File parentFile = new File(projectPath).getParentFile();
+        // 输入路径
+        String inputPath = new File(parentFile, "yscp-generator-demo/acm-template").getAbsolutePath();
+        List<File> files = FileUtil.loopFiles(inputPath);
         for (File file : files) {
             System.out.println(file.getAbsolutePath());
         }

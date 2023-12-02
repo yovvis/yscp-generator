@@ -1,9 +1,8 @@
 package com.yovvis.utils;
 
 import cn.hutool.core.util.ReflectUtil;
-import com.yovvis.cli.command.GenerateCommand;
 import com.yovvis.factory.CommandFactory;
-import org.junit.Test;
+import org.apache.commons.lang3.StringUtils;
 import picocli.CommandLine;
 
 import java.lang.reflect.Field;
@@ -66,12 +65,4 @@ public class CommandUtils {
         return null;
     }
 
-    @Test
-    public void testArgs() {
-        String[] args = new String[] {"generate", "-l"};
-        String[] strings = preCommand(args);
-        for (String string : strings) {
-            System.out.println(string);
-        }
-    }
 }

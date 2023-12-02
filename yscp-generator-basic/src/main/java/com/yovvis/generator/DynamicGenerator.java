@@ -1,14 +1,13 @@
 package com.yovvis.generator;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
-
 import com.yovvis.model.MainTemplateConfig;
 import com.yovvis.utils.PathUtils;
-
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
+
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 /**
  * 动态生成
@@ -18,9 +17,10 @@ import freemarker.template.TemplateException;
 public class DynamicGenerator {
     public static void main(String[] args) throws TemplateException, IOException {
         // 项目路径 D:\idea\yscp-generator
+
         String projectPath = PathUtils.getRunTimePath();
         String inputPath =
-            projectPath + File.separator + "yscp-generator-basic/src/main/resources/templates/MainTemplate.java.ftl";
+            projectPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
         String outputPath = projectPath + File.separator + "MainTemplate.java";
         MainTemplateConfig model = new MainTemplateConfig();
         model.setLoop(false);
@@ -47,6 +47,7 @@ public class DynamicGenerator {
         // 4、创建模板对象，加载指定模板
         String templateName = new File(inputPath).getName();
         Template template = configuration.getTemplate(templateName, "UTF-8");
+        // 如果文件不存在先建立
         BufferedWriter out =
             new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputPath), StandardCharsets.UTF_8));
         template.process(model, out);

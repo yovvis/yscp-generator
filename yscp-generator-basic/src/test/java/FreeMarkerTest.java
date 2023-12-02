@@ -37,11 +37,11 @@ public class FreeMarkerTest {
         dataModel.put("currentYear", 2023);
         List<Map<String, Object>> menuItems = new ArrayList<>();
         Map<String, Object> menuItem1 = new HashMap<>();
-        menuItem1.put("url", "https://codefather.cn");
-        menuItem1.put("label", "编程导航");
+        menuItem1.put("url", "https://github.com/yovvis");
+        menuItem1.put("label", "yovvis");
         Map<String, Object> menuItem2 = new HashMap<>();
-        menuItem2.put("url", "https://laoyujianli.com");
-        menuItem2.put("label", "老鱼简历");
+        menuItem2.put("url", "https://github.com/yovvis");
+        menuItem2.put("label", "github");
         menuItems.add(menuItem1);
         menuItems.add(menuItem2);
 

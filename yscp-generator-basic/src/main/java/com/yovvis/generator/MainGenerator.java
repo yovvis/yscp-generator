@@ -22,14 +22,15 @@ public class MainGenerator {
      */
     public static void doGenerator(Object model) throws IOException, TemplateException {
         String projectPath = PathUtils.getRunTimePath();
-        String inputPath = new File(projectPath, "yscp-generator-demo/acm-template").getAbsolutePath();
+        // 整个项目根路径
+        File parentFile = new File(projectPath).getParentFile();
+        String inputPath = new File(parentFile, "yscp-generator-demo/acm-template").getAbsolutePath();
         String outputPath = projectPath;
         // 生成静态文件
         StaticGenerator.copyFilesByRecursive(inputPath, outputPath);
         // 生成动态文件
-        String inputDynamicPath =
-            projectPath + File.separator + "yscp-generator-basic/src/main/resources/templates/MainTemplate.java.ftl";
-        String outputDynamicPath = projectPath + File.separator + "acm-template/src/com/yovvis/acm/MainTemplate.java";
+        String inputDynamicPath = projectPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
+        String outputDynamicPath = outputPath + File.separator + "acm-template/src/com/yovvis/acm/MainTemplate.java";
         DynamicGenerator.doGenerator(inputDynamicPath, outputDynamicPath, model);
     }
 
@@ -38,7 +39,6 @@ public class MainGenerator {
         model.setLoop(false);
         model.setAuthor("yovvis");
         model.setOutputText("求和结果为：");
-
         doGenerator(model);
     }
 }
