@@ -1,5 +1,6 @@
 package com.yovvis.generator;
 
+import cn.hutool.core.io.FileUtil;
 import com.yovvis.model.MainTemplateConfig;
 import com.yovvis.utils.PathUtils;
 import freemarker.template.Configuration;
@@ -47,7 +48,10 @@ public class DynamicGenerator {
         // 4、创建模板对象，加载指定模板
         String templateName = new File(inputPath).getName();
         Template template = configuration.getTemplate(templateName, "UTF-8");
-        // 如果文件不存在先建立
+        // 文件不存在则创建文件和父目录
+        if (!FileUtil.exist(outputPath)) {
+            FileUtil.touch(outputPath);
+        }
         BufferedWriter out =
             new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputPath), StandardCharsets.UTF_8));
         template.process(model, out);
