@@ -1,0 +1,58 @@
+{
+  "name": "acm-template-pro-generator",
+  "description": "ACM 示例模板生成器",
+  "basePackage": "com.yovvis",
+  "version": "1.0",
+  "author": "yovvis",
+  "createTime": "2023-12-06",
+  "fileConfig": {
+    "inputRootPath": "D:/idea/yscp-generator/yscp-generator-demo/acm-template-pro",
+    "outputRootPath": "generated",
+    "type": "dir",
+    "files": [
+      {
+        "inputPath": "src/com/yovvis/acm/MainTemplate.java.ftl",
+        "outputPath": "src/com/yovvis/acm/MainTemplate.java",
+        "type": "file",
+        "generateType": "dynamic"
+      },
+      {
+        "inputPath": ".gitignore",
+        "outputPath": ".gitignore",
+        "type": "file",
+        "generateType": "static"
+      },
+      {
+        "inputPath": "README.md",
+        "outputPath": "README.md",
+        "type": "file",
+        "generateType": "static"
+      }
+    ]
+  },
+  "modelConfig": {
+    "models": [
+      {
+        "fieldName": "loop",
+        "type": "boolean",
+        "description": "是否生成循环",
+        "defaultValue": false,
+        "abbr": "l"
+      },
+      {
+        "fieldName": "author",
+        "type": "String",
+        "description": "作者注释",
+        "defaultValue": "yovvis",
+        "abbr": "a"
+      },
+      {
+        "fieldName": "outputText",
+        "type": "String",
+        "description": "输出信息",
+        "defaultValue": "sum = ",
+        "abbr": "o"
+      }
+    ]
+  }
+}

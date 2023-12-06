@@ -11,6 +11,8 @@ import java.util.List;
  * @author yovvis
  * @date 2023/12/3
  */
+@NoArgsConstructor
+@Data
 public class Meta {
     private String name;
     private String description;
