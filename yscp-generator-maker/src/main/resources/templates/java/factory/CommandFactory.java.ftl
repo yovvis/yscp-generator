@@ -1,8 +1,8 @@
-package com.yovvis.maker.factory;
+package ${basePackage}.factory;
 
-import com.yovvis.maker.cli.command.ConfigCommand;
-import com.yovvis.maker.cli.command.GenerateCommand;
-import com.yovvis.maker.cli.command.ListCommand;
+import ${basePackage}.cli.command.ConfigCommand;
+import ${basePackage}.cli.command.GenerateCommand;
+import ${basePackage}.cli.command.ListCommand;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * 静态命令工厂
  *
- * @author yovvis
+ * @author ${author}
  * @date 2023/11/26
  */
 public class CommandFactory {

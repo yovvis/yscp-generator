@@ -1,4 +1,4 @@
-package com.yovvis.maker.utils;
+package ${basePackage}.utils;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -11,7 +11,7 @@ import java.nio.file.Path;
 /**
  * 路径工具类
  *
- * @author yovvis
+ * @author ${author}
  */
 public class PathUtils {
     public static final String CONFIG_FOLDER = "config";

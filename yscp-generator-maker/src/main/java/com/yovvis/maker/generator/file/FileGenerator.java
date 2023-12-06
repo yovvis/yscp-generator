@@ -31,7 +31,7 @@ public class FileGenerator {
         // 生成动态文件
         String inputDynamicPath = projectPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
         String outputDynamicPath = outputPath + File.separator + "acm-template/src/com/yovvis/acm/MainTemplate.java";
-        DynamicFileGenerator.doGenerator(inputDynamicPath, outputDynamicPath, model);
+        DynamicFileGenerator.doGenerate(inputDynamicPath, outputDynamicPath, model);
     }
 
     public static void main(String[] args) throws TemplateException, IOException {

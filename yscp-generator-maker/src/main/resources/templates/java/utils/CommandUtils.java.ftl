@@ -1,7 +1,7 @@
-package com.yovvis.maker.utils;
+package ${basePackage}.utils;
 
 import cn.hutool.core.util.ReflectUtil;
-import com.yovvis.maker.factory.CommandFactory;
+import ${basePackage}.factory.CommandFactory;
 import org.apache.commons.lang3.StringUtils;
 import picocli.CommandLine;
 
@@ -13,7 +13,7 @@ import java.util.Set;
 /**
  * 命令工具类
  *
- * @author yovvis
+ * @author ${author}
  * @date 2023/11/26
  */
 public class CommandUtils {

@@ -1,4 +1,9 @@
-package com.yovvis.maker.generator.file;
+package ${basePackage}.generator;
+
+import cn.hutool.core.io.FileUtil;
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import freemarker.template.TemplateException;
 
 import cn.hutool.core.io.FileUtil;
 import freemarker.template.Configuration;
@@ -8,12 +13,13 @@ import freemarker.template.TemplateException;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
+
 /**
- * 动态生成
- *
- * @author
- */
-public class DynamicFileGenerator {
+* 动态生成
+*
+* @author ${author}
+*/
+public class DynamicGenerator {
 
     /**
      * @param inputPath 输入路径
