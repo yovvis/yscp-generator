@@ -1,8 +1,6 @@
-package com.yovvis.maker.generator;
+package com.yovvis.maker.generator.file;
 
 import cn.hutool.core.io.FileUtil;
-import com.yovvis.maker.model.MainTemplateConfig;
-import com.yovvis.maker.utils.PathUtils;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -15,20 +13,7 @@ import java.nio.charset.StandardCharsets;
  *
  * @author
  */
-public class DynamicGenerator {
-    public static void main(String[] args) throws TemplateException, IOException {
-        // 项目路径 D:\idea\yscp-generator
-
-        String projectPath = PathUtils.getRunTimePath();
-        String inputPath =
-            projectPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
-        String outputPath = projectPath + File.separator + "MainTemplate.java";
-        MainTemplateConfig model = new MainTemplateConfig();
-        model.setLoop(false);
-        model.setAuthor("yovvis");
-        model.setOutputText("结果为：");
-        doGenerator(inputPath, outputPath, model);
-    }
+public class DynamicFileGenerator {
 
     /**
      * @param inputPath 输入路径

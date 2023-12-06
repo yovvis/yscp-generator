@@ -1,6 +1,6 @@
-package com.yovvis.maker.generator;
+package com.yovvis.maker.generator.file;
 
-import com.yovvis.maker.model.MainTemplateConfig;
+import com.yovvis.maker.model.DataModel;
 import com.yovvis.maker.utils.PathUtils;
 import freemarker.template.TemplateException;
 
@@ -12,7 +12,7 @@ import java.io.IOException;
  *
  * @author yovvis
  */
-public class MainGenerator {
+public class FileGenerator {
     /**
      * 生成
      *
@@ -27,15 +27,15 @@ public class MainGenerator {
         String inputPath = new File(parentFile, "yscp-generator-demo/acm-template").getAbsolutePath();
         String outputPath = projectPath;
         // 生成静态文件
-        StaticGenerator.copyFilesByRecursive(inputPath, outputPath);
+        StaticFileGenerator.copyFilesByHutool(inputPath, outputPath);
         // 生成动态文件
         String inputDynamicPath = projectPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
         String outputDynamicPath = outputPath + File.separator + "acm-template/src/com/yovvis/acm/MainTemplate.java";
-        DynamicGenerator.doGenerator(inputDynamicPath, outputDynamicPath, model);
+        DynamicFileGenerator.doGenerator(inputDynamicPath, outputDynamicPath, model);
     }
 
     public static void main(String[] args) throws TemplateException, IOException {
-        MainTemplateConfig model = new MainTemplateConfig();
+        DataModel model = new DataModel();
         model.setLoop(false);
         model.setAuthor("yovvis");
         model.setOutputText("求和结果为：");

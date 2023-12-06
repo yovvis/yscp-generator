@@ -27,7 +27,7 @@ public class MainGenerator {
         String inputPath = new File(parentFile, "yscp-generator-demo/acm-template").getAbsolutePath();
         String outputPath = projectPath;
         // 生成静态文件
-        StaticGenerator.copyFilesByRecursive(inputPath, outputPath);
+        StaticGenerator.copyFilesByHutool(inputPath, outputPath);
         // 生成动态文件
         String inputDynamicPath = projectPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
         String outputDynamicPath = outputPath + File.separator + "acm-template/src/com/yovvis/acm/MainTemplate.java";

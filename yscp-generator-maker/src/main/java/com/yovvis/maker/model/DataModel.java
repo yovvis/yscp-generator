@@ -8,7 +8,7 @@ import lombok.Data;
  * @author yovvis
  */
 @Data
-public class MainTemplateConfig {
+public class DataModel {
 
     /**
      * 是否循环
