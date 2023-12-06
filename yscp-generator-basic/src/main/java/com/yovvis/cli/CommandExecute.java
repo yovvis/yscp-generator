@@ -34,6 +34,7 @@ public class CommandExecute implements Runnable {
      * @return
      */
     public Integer doExecute(String[] args) {
+        // 强制交互
         args = CommandUtils.preCommand(args);
         return commandLine.execute(args);
     }
