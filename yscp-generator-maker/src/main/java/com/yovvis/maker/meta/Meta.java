@@ -30,6 +30,7 @@ public class Meta {
         private String outputRootPath;
         private String type;
         private List<FileInfo> files;
+        private String sourceRootPath;
 
         @NoArgsConstructor
         @Data

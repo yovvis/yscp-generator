@@ -3,11 +3,12 @@
   "description": "ACM 示例模板生成器",
   "basePackage": "com.yovvis",
   "version": "1.0",
-  "author": "yovvis",
+  "author": "Yovvis",
   "createTime": "2023-12-06",
   "fileConfig": {
-    "inputRootPath": "D:/idea/yscp-generator/yscp-generator-demo/acm-template-pro",
+    "inputRootPath": ".source/acm-template-pro",
     "outputRootPath": "generated",
+    "sourceRootPath": "D:/idea/yscp-generator/yscp-generator-demo/acm-template-pro",
     "type": "dir",
     "files": [
       {
