@@ -18,9 +18,9 @@ public class StaticGenerator {
         // 项目根路径 D:\idea\yscp-generator
         String projectPath = PathUtils.getRunTimePath();
         File parentFile = new File(projectPath).getParentFile();
-        // 输入路径 ACM模板路径 yscp-generator-demo\acm-template
+        // 输入路径 ACM模板路径 yscp-generator-demo-projects\acm-template
         String inputPath =
-            new File(parentFile, "yscp-generator-demo" + File.separator + "acm-template").getAbsolutePath();
+            new File(parentFile, "yscp-generator-demo-projects" + File.separator + "acm-template").getAbsolutePath();
         // 输出路径
         String outputPath = projectPath;
         // 执行拷贝路径

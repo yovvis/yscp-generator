@@ -24,7 +24,7 @@ public class FileGenerator {
         String projectPath = PathUtils.getRunTimePath();
         // 整个项目根路径
         File parentFile = new File(projectPath).getParentFile();
-        String inputPath = new File(parentFile, "yscp-generator-demo/acm-template").getAbsolutePath();
+        String inputPath = new File(parentFile, "yscp-generator-demo-projects/acm-template").getAbsolutePath();
         String outputPath = projectPath;
         // 生成静态文件
         StaticFileGenerator.copyFilesByHutool(inputPath, outputPath);
