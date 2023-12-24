@@ -8,6 +8,7 @@ import com.yovvis.maker.generator.ScriptGenerator;
 import com.yovvis.maker.generator.file.DynamicFileGenerator;
 import com.yovvis.maker.meta.Meta;
 import com.yovvis.maker.meta.MetaManager;
+import com.yovvis.maker.utils.PathUtils;
 import freemarker.template.TemplateException;
 
 import java.io.File;
@@ -24,7 +25,7 @@ public abstract class GenerateTemplate {
         Meta meta = MetaManager.getMetaObject();
 
         // 0、输出根路径
-        String projectPath = System.getProperty("user.dir");
+        String projectPath = PathUtils.getRunTimePath();
         String outputPath = projectPath + File.separator + "generated" + File.separator + meta.getName();
         if (!FileUtil.exist(outputPath)) {
             FileUtil.mkdir(outputPath);
@@ -126,6 +127,26 @@ public abstract class GenerateTemplate {
         outputFilePath = outputBaseJavaPackagePath + "/generator/StaticGenerator.java";
         DynamicFileGenerator.doGenerate(inputFilePath, outputFilePath, meta);
 
+        // factory.CommandFactory
+        inputFilePath = inputResourcePath + File.separator + "templates/java/factory/CommandFactory.java.ftl";
+        outputFilePath = outputBaseJavaPackagePath + "/factory/CommandFactory.java";
+        DynamicFileGenerator.doGenerate(inputFilePath, outputFilePath, meta);
+
+        // utils.CommandUtils
+        inputFilePath = inputResourcePath + File.separator + "templates/java/utils/CommandUtils.java.ftl";
+        outputFilePath = outputBaseJavaPackagePath + "/utils/CommandUtils.java";
+        DynamicFileGenerator.doGenerate(inputFilePath, outputFilePath, meta);
+
+        // utils.PathUtils
+        inputFilePath = inputResourcePath + File.separator + "templates/java/utils/PathUtils.java.ftl";
+        outputFilePath = outputBaseJavaPackagePath + "/utils/PathUtils.java";
+        DynamicFileGenerator.doGenerate(inputFilePath, outputFilePath, meta);
+
+        // 生成README.MD
+        inputFilePath = inputResourcePath + File.separator + "templates/README.md.ftl";
+        outputFilePath = outputPath + File.separator + "README.md";
+        DynamicFileGenerator.doGenerate(inputFilePath, outputFilePath, meta);
+
         // pom.xml
         inputFilePath = inputResourcePath + File.separator + "templates/pom.xml.ftl";
         outputFilePath = outputPath + File.separator + "pom.xml";
@@ -162,7 +183,7 @@ public abstract class GenerateTemplate {
     }
 
     /**
-     * 生成精简版程序
+     * 生成产品包
      * 
      * @param outputPath
      * @param sourceCopyDestPath
