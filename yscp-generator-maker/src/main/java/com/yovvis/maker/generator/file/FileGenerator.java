@@ -1,6 +1,5 @@
 package com.yovvis.maker.generator.file;
 
-import com.yovvis.maker.model.DataModel;
 import com.yovvis.maker.utils.PathUtils;
 import freemarker.template.TemplateException;
 
@@ -34,11 +33,4 @@ public class FileGenerator {
         DynamicFileGenerator.doGenerate(inputDynamicPath, outputDynamicPath, model);
     }
 
-    public static void main(String[] args) throws TemplateException, IOException {
-        DataModel model = new DataModel();
-        model.setLoop(false);
-        model.setAuthor("yovvis");
-        model.setOutputText("求和结果为：");
-        doGenerator(model);
-    }
 }
