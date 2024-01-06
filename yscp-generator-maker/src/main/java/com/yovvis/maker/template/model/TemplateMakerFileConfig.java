@@ -1,10 +1,9 @@
 package com.yovvis.maker.template.model;
 
-import com.yovvis.maker.meta.Meta;
+import java.util.List;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 /**
  * 文件过滤
@@ -24,11 +23,12 @@ public class TemplateMakerFileConfig {
      */
     private FileGroupConfig fileGroupConfig;
 
-
     @NoArgsConstructor
     @Data
     public static class FileInfoConfig {
         private String path;
+
+        private String condition;
 
         private List<FileFilterConfig> filterConfigList;
     }
