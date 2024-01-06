@@ -1,5 +1,6 @@
 package com.yovvis.maker.template.model;
 
+import com.yovvis.maker.meta.Meta;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,7 +14,16 @@ import java.util.List;
  */
 @Data
 public class TemplateMakerFileConfig {
+    /**
+     * 文件配置
+     */
     private List<FileInfoConfig> files;
+
+    /**
+     * 分组配置
+     */
+    private FileGroupConfig fileGroupConfig;
+
 
     @NoArgsConstructor
     @Data
@@ -21,5 +31,15 @@ public class TemplateMakerFileConfig {
         private String path;
 
         private List<FileFilterConfig> filterConfigList;
+    }
+
+    @NoArgsConstructor
+    @Data
+    public static class FileGroupConfig {
+        private String condition;
+
+        private String groupKey;
+
+        private String groupName;
     }
 }

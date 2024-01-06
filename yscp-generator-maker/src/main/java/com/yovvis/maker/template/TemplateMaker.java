@@ -1,5 +1,7 @@
 package com.yovvis.maker.template;
 
+import com.yovvis.maker.meta.Meta.FileConfig.FileInfo;
+
 import java.io.File;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -69,7 +71,15 @@ public class TemplateMaker {
 
         List<TemplateMakerFileConfig.FileInfoConfig> fileInfoConfigList = Arrays.asList(fileConfig1, fileConfig2);
         TemplateMakerFileConfig templateMakerFileConfig = new TemplateMakerFileConfig();
+
         templateMakerFileConfig.setFiles(fileInfoConfigList);
+
+        // 分组配置
+        TemplateMakerFileConfig.FileGroupConfig fileGroupConfig = new TemplateMakerFileConfig.FileGroupConfig();
+        fileGroupConfig.setCondition("outputText");
+        fileGroupConfig.setGroupKey("test");
+        fileGroupConfig.setGroupName("测试分组");
+        templateMakerFileConfig.setFileGroupConfig(fileGroupConfig);
 
         long l = TemplateMaker.makeTemplate(meta, originProjectPath, templateMakerFileConfig, modelInfo, searchStr,
             1743536105746653184L);
@@ -127,7 +137,22 @@ public class TemplateMaker {
                 newFileInfoList.add(fileInfo);
             }
         }
+        // 如果是文件组
+        TemplateMakerFileConfig.FileGroupConfig fileGroupConfig = templateMakerFileConfig.getFileGroupConfig();
+        if (fileGroupConfig != null) {
+            String condition = fileGroupConfig.getCondition();
+            String groupKey = fileGroupConfig.getGroupKey();
+            String groupName = fileGroupConfig.getGroupName();
 
+            Meta.FileConfig.FileInfo groupFileInfo = new Meta.FileConfig.FileInfo();
+            groupFileInfo.setCondition(condition);
+            groupFileInfo.setGroupKey(groupKey);
+            groupFileInfo.setGroupName(groupName);
+            // 文件全放到一个分组内
+            groupFileInfo.setFiles(newFileInfoList);
+            newFileInfoList = new ArrayList<>();
+            newFileInfoList.add(groupFileInfo);
+        }
         // 三、生成配置文件
         String metaOutputPath = sourceRootPath + File.separator + "meta.json";
         // 如果已经有meta.json代表已生成过了
