@@ -1,7 +1,7 @@
 # 公共配置文件
 spring:
   application:
-    name: springboot-init
+    name: yscp-generator-web-backend
   # 默认 dev 环境
   profiles:
     active: dev
@@ -90,20 +90,16 @@ cos:
     region: xxx
     bucket: xxx
 # 接口文档的配置
-springdoc:
-  group-configs:
-    - group: 'default'
-      packages-to-scan: com.yovvis.springbootinit.controller
-# knife4j的增强配置，不需要增强可以不配
 knife4j:
   enable: true
-  # 开启Swagger的Basic认证功能,默认是false
-  basic:
-    enable: true
-    # Basic认证用户名
-    username: root
-    # Basic认证密码
-    password: 123456
+  openapi:
+    title: "接口文档"
+    version: 1.0
+    group:
+      default:
+        api-rule: package
+        api-rule-resources:
+          - com.yovvis.springbootinit.controller
 # jasypt
 jasypt:
   encryptor:
