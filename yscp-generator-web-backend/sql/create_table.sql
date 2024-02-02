@@ -14,6 +14,8 @@ create table if not exists user
     userName     varchar(256)                           null comment '用户昵称',
     userAvatar   varchar(1024)                          null comment '用户头像',
     userProfile  varchar(512)                           null comment '用户简介',
+    unionId  varchar(512)                           null comment '星球id',
+    mpOpenId  varchar(512)                           null comment '微信平台id',
     userRole     varchar(256) default 'user'            not null comment '用户角色：user/admin/ban',
     createTime   datetime     default CURRENT_TIMESTAMP not null comment '创建时间',
     updateTime   datetime     default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
@@ -45,8 +47,8 @@ create table if not exists generator
     ) comment '代码生成器' collate = utf8mb4_unicode_ci;
 
 -- 模拟用户数据
-INSERT INTO my_db.user (id, userAccount, userPassword, userName, userAvatar, userProfile, userRole) VALUES (1, 'yovvis', 'b0dd3697a192885d7c055db46155b26a', '程序员Yovvis', 'https://img.yovvis.top/avatar.png', '我有一头小毛驴我从来也不骑', 'admin');
-INSERT INTO my_db.user (id, userAccount, userPassword, userName, userAvatar, userProfile, userRole) VALUES (2, 'yovvis2', 'b0dd3697a192885d7c055db46155b26a', '普通Yovvis', 'https://img.yovvis.top/avatar.png', '我有一头小毛驴我从来也不骑', 'user');
+INSERT INTO my_db.user (id, userAccount, userPassword, userName, userAvatar, userProfile, userRole) VALUES (1, 'yovvis', 'bf81e6a43e9b319e0c128efe91e29f93', '程序员Yovvis', 'https://img.yovvis.top/avatar.png', '我有一头小毛驴我从来也不骑', 'admin');
+INSERT INTO my_db.user (id, userAccount, userPassword, userName, userAvatar, userProfile, userRole) VALUES (2, 'yovvis2', 'bf81e6a43e9b319e0c128efe91e29f93', '普通Yovvis', 'https://img.yovvis.top/avatar.png', '我有一头小毛驴我从来也不骑', 'user');
 
 -- 模拟代码生成器数据
 INSERT INTO my_db.generator (id, name, description, basePackage, version, author, tags, picture, fileConfig, modelConfig, distPath, status, userId) VALUES (1, 'ACM 模板项目', 'ACM 模板项目生成器', 'com.yovvis', '1.0', '程序员Yovvis', '["Java"]', 'https://img.yovvis.top/avatar.png', '{}', '{}', null, 0, 1);

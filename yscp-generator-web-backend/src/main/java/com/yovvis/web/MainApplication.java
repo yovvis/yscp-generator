@@ -38,7 +38,7 @@ public class MainApplication {
         String port = env.getProperty("server.port");
         // path
         String path = env.getProperty("server.servlet.context-path");
-        if (StringUtils.isEmpty(path)){
+        if (StringUtils.isEmpty(path)) {
             path = "";
         }
         log.info("\n----------------------------------------------------------\n\t" +

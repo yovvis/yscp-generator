@@ -6,9 +6,10 @@ import com.yovvis.web.model.dto.user.UserQueryRequest;
 import com.yovvis.web.model.entity.User;
 import com.yovvis.web.model.vo.LoginUserVO;
 import com.yovvis.web.model.vo.UserVO;
-import java.util.List;
-import javax.servlet.http.HttpServletRequest;
 import me.chanjar.weixin.common.bean.WxOAuth2UserInfo;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * 用户服务
