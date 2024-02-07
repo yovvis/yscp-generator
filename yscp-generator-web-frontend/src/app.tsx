@@ -1,11 +1,11 @@
+import logo from '@/assets/logo.png';
 import Footer from '@/components/Footer';
+import { getLoginUser } from '@/services/backend/userController';
 import type { RunTimeLayoutConfig } from '@umijs/max';
 import { history } from '@umijs/max';
 import defaultSettings from '../config/defaultSettings';
 import { AvatarDropdown } from './components/RightContent/AvatarDropdown';
 import { requestConfig } from './requestConfig';
-import {getLoginUser} from "@/services/backend/userController";
-import {message} from "antd";
 
 const loginPath = '/user/login';
 
@@ -41,6 +41,7 @@ export async function getInitialState(): Promise<InitialState> {
 // @ts-ignore
 export const layout: RunTimeLayoutConfig = ({ initialState }) => {
   return {
+    logo,
     avatarProps: {
       render: () => {
         return <AvatarDropdown />;
