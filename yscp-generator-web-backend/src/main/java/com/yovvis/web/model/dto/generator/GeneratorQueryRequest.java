@@ -69,6 +69,7 @@ public class GeneratorQueryRequest extends PageRequest implements Serializable {
      */
     private String author;
 
+
     /**
      * 代码生成器产物路径
      */

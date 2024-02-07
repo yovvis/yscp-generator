@@ -155,6 +155,22 @@ public class GeneratorController {
     }
 
     /**
+     * 分页获取列表（仅管理员）
+     *
+     * @param generatorQueryRequest
+     * @return
+     */
+    @PostMapping("/list/page")
+    @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
+    public BaseResponse<Page<Generator>> listPostByPage(@RequestBody GeneratorQueryRequest generatorQueryRequest) {
+        long current = generatorQueryRequest.getCurrent();
+        long size = generatorQueryRequest.getPageSize();
+        Page<Generator> generatorPage = generatorService.page(new Page<>(current, size),
+                generatorService.getQueryWrapper(generatorQueryRequest));
+        return ResultUtils.success(generatorPage);
+    }
+
+    /**
      * 分页获取列表（封装类）
      *
      * @param generatorQueryRequest
